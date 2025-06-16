@@ -1,0 +1,41 @@
+/* Base Typography */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-playfair;
+}
+
+body {
+  @apply font-clash;
+}
+
+/* Typography Utilities */
+.heading-1 {
+  @apply font-playfair text-4xl font-bold;
+}
+
+.heading-2 {
+  @apply font-playfair text-3xl font-bold;
+}
+
+.heading-3 {
+  @apply font-playfair text-2xl font-bold;
+}
+
+.heading-4 {
+  @apply font-playfair text-xl font-semibold;
+}
+
+.subtitle-1 {
+  @apply font-clash text-lg font-semibold;
+}
+
+.subtitle-2 {
+  @apply font-clash text-base font-semibold;
+}
+
+.body-1 {
+  @apply font-clash text-base;
+}
+
+.body-2 {
+  @apply font-clash text-sm;
+}

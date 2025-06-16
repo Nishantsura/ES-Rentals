@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sad Cat Face -->
+  <circle cx="120" cy="120" r="100" fill="#F3F4F6"/>
+  <!-- Ears -->
+  <path d="M60 80L80 60C80 60 85 80 60 80Z" fill="#4B5563"/>
+  <path d="M180 80L160 60C160 60 155 80 180 80Z" fill="#4B5563"/>
+  <!-- Eyes -->
+  <ellipse cx="90" cy="110" rx="15" ry="20" fill="#4B5563"/>
+  <ellipse cx="150" cy="110" rx="15" ry="20" fill="#4B5563"/>
+  <!-- Sad Mouth -->
+  <path d="M90 160C90 160 120 140 150 160" stroke="#4B5563" stroke-width="8" stroke-linecap="round"/>
+  <!-- Whiskers -->
+  <line x1="40" y1="120" x2="70" y2="115" stroke="#9CA3AF" stroke-width="2"/>
+  <line x1="40" y1="130" x2="70" y2="125" stroke="#9CA3AF" stroke-width="2"/>
+  <line x1="40" y1="140" x2="70" y2="135" stroke="#9CA3AF" stroke-width="2"/>
+  <line x1="200" y1="120" x2="170" y2="115" stroke="#9CA3AF" stroke-width="2"/>
+  <line x1="200" y1="130" x2="170" y2="125" stroke="#9CA3AF" stroke-width="2"/>
+  <line x1="200" y1="140" x2="170" y2="135" stroke="#9CA3AF" stroke-width="2"/>
+</svg>

@@ -1,0 +1,172 @@
+@import './styles/typography.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 33% 98%;
+    --foreground: 224 71.4% 4.1%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    
+    --primary: 164 64% 54%; /* Teal #40d4b1 */
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 220 14% 90%;
+    --secondary-foreground: 220 65% 23%;
+    
+    --muted: 220 14% 90%;
+    --muted-foreground: 220 8.9% 46.1%;
+    
+    --accent: 244 43% 76%;
+    --accent-foreground: 224 71.4% 4.1%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 164 64% 54%; /* Teal #40d4b1 */
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    /* Base colors */
+    --background: 220 15% 10%; /* Rich dark blue-black */
+    --foreground: 35 20% 90%; /* Warm off-white */
+ 
+    /* UI Element colors */
+    --card: 220 15% 13%; /* Slightly lighter than base */
+    --card-foreground: 35 20% 90%; /* Warm off-white */
+ 
+    --popover: 220 15% 16%; /* Slightly elevated */
+    --popover-foreground: 35 20% 90%; /* Warm off-white */
+ 
+    /* Golden-orange accent */
+    --primary: 164 64% 54%; /* Teal #40d4b1 */
+    --primary-foreground: 220 15% 10%; /* Dark background */
+ 
+    --secondary: 220 15% 15%; /* Dark elevated surface */
+    --secondary-foreground: 35 20% 90%; /* Warm off-white */
+ 
+    --muted: 220 10% 25%; /* Muted dark gray-blue */
+    --muted-foreground: 35 10% 70%; /* Subdued light text */
+ 
+    /* Keep accent in teal family */
+    --accent: 164 64% 54%; /* Teal #40d4b1 */
+    --accent-foreground: 220 15% 10%; /* Dark background */
+ 
+    /* Semantic colors */
+    --destructive: 0 65% 45%; /* Deep red */
+    --destructive-foreground: 35 20% 90%; /* Warm off-white */
+ 
+    --border: 220 15% 20%; /* Subtle borders */
+    --input: 220 15% 13%; /* Same as cards */
+    --ring: 164 64% 54%; /* Teal #40d4b1 */
+    
+    /* Chart colors for data visualization */
+    --chart-1: 164 64% 54%; /* Teal #40d4b1 */
+    --chart-2: 164 70% 40%; /* Darker teal */
+    --chart-3: 220 40% 30%; /* Dark blue */
+    --chart-4: 220 30% 40%; /* Medium blue */
+    --chart-5: 220 20% 60%; /* Light blue */
+  }
+
+  body {
+    min-height: 100vh;
+  }
+
+  :root:not(.dark) body {
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  }
+
+  .dark body {
+    background-image: linear-gradient(180deg, hsl(220, 15%, 10%) 0%, hsl(220, 15%, 8%) 100%);
+    color: hsl(35, 20%, 90%);
+  }
+}
+
+@layer utilities {
+  /* Horizontal scrolling animation for brand cards */
+  .scroll-container {
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .scroll-track {
+    display: flex;
+    gap: 2rem; /* Match the gap-8 in Tailwind */
+    width: fit-content;
+  }
+  
+  /* Animate at exactly 40px per second */
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-1000px); } /* Fixed large distance */
+  }
+  
+  .auto-scroll {
+    animation: scroll 25s linear infinite; /* 1000px ÷ 40px/s = 25s */
+  }
+  
+  .scroll-pause {
+    animation-play-state: paused !important;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+  
+  /* Dark mode specific utilities */
+  .dark .glass-effect {
+    background: hsla(220, 15%, 16%, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsla(220, 15%, 25%, 0.3);
+  }
+  
+  .dark .accent-glow {
+    box-shadow: 0 0 15px rgba(64, 212, 177, 0.3);
+  }
+  
+  .dark .heading-glow {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Transition utilities */
+  .theme-transition {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, box-shadow;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+}
+
+/* Custom date input styling */
+input[type="date"] {
+  text-align: left !important;
+  direction: ltr !important;
+}
+
+@font-face {
+  font-family: 'Agrandir';
+  font-weight: 700;
+  font-style: normal;
+  src: url('../../public/fonts/Agrandir-TextBold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'ClashGrotesk';
+  font-weight: 500,600,700;
+  font-style: normal;
+  src: url('../../public/fonts/ClashGrotesk-Variable.ttf') format('truetype');
+}

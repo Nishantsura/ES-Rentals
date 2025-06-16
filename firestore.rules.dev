@@ -1,0 +1,13 @@
+rules_version = '2';
+
+// Development rules - FOR EMULATORS ONLY
+// IMPORTANT: NEVER use these rules in production!
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow full read/write access for emulator development
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}
