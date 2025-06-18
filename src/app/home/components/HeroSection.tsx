@@ -93,7 +93,7 @@ export default function HeroSection() {
             Parked in Dubai. Just for You
           </h1>
           <p className="text-lg font-semibold font-clash mt-3 text-white/90 drop-shadow-md">
-            Rent just about any car, just about anywhere
+            Dubai's Gateway to Supercar Thrills
           </p>
         </div>
         
@@ -209,7 +209,7 @@ export default function HeroSection() {
               aria-label="Contact Us"
             >
               <Search className="h-5 w-5 text-black mr-2" />
-              <span className="text-black font-medium">Contact Us</span>
+              <span className="text-black font-medium">Search Cars</span>
             </button>
           </div>
         </div>

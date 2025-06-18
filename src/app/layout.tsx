@@ -52,7 +52,7 @@ export default function RootLayout({
         )}
         style={{ margin: 0, padding: 0, width: '100%' }}
       >
-        <ThemeProvider defaultTheme="light" storageKey="autoluxe-theme">
+        <ThemeProvider defaultTheme="dark" storageKey="autoluxe-theme">
           <CarHireProvider>
             <Header />
             <main className="flex-1 w-full">

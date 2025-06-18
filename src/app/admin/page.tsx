@@ -42,7 +42,7 @@ export default function AdminDashboard() {
     return (
       <Card>
         <CardContent className="p-6">
-          <div className="h-40 animate-pulse bg-gray-200 rounded-lg"></div>
+          <div className="h-40 animate-pulse bg-secondary rounded-lg"></div>
         </CardContent>
       </Card>
     );
@@ -63,7 +63,7 @@ export default function AdminDashboard() {
                 <p className="text-sm text-red-400 ml-7">{error.details}</p>
               )}
               {process.env.NODE_ENV === 'development' && error.stack && (
-                <pre className="mt-2 p-4 bg-red-50 rounded-lg text-xs overflow-x-auto">
+                <pre className="mt-2 p-4 bg-destructive/10 rounded-lg text-xs overflow-x-auto">
                   {error.stack}
                 </pre>
               )}
@@ -84,8 +84,8 @@ export default function AdminDashboard() {
         <Card className="hover:shadow-lg transition-shadow">
           <CardContent className="p-4 lg:p-6">
             <h2 className="text-lg lg:text-xl font-semibold mb-3">Cars</h2>
-            <p className="text-gray-600 text-sm lg:text-base mb-4">Manage your car inventory</p>
-            <a href="/admin/cars" className="inline-flex items-center text-blue-500 hover:text-blue-600 hover:underline text-sm lg:text-base">
+            <p className="text-muted-foreground text-sm lg:text-base mb-4">Manage your car inventory</p>
+            <a href="/admin/cars" className="inline-flex items-center text-primary hover:text-primary/80 hover:underline text-sm lg:text-base">
               Go to Cars
               <span className="ml-1">→</span>
             </a>
@@ -95,8 +95,8 @@ export default function AdminDashboard() {
         <Card className="hover:shadow-lg transition-shadow">
           <CardContent className="p-4 lg:p-6">
             <h2 className="text-lg lg:text-xl font-semibold mb-3">Brands</h2>
-            <p className="text-gray-600 text-sm lg:text-base mb-4">Manage car brands</p>
-            <a href="/admin/brands" className="inline-flex items-center text-blue-500 hover:text-blue-600 hover:underline text-sm lg:text-base">
+            <p className="text-muted-foreground text-sm lg:text-base mb-4">Manage car brands</p>
+            <a href="/admin/brands" className="inline-flex items-center text-primary hover:text-primary/80 hover:underline text-sm lg:text-base">
               Go to Brands
               <span className="ml-1">→</span>
             </a>
@@ -106,8 +106,8 @@ export default function AdminDashboard() {
         <Card className="hover:shadow-lg transition-shadow">
           <CardContent className="p-4 lg:p-6">
             <h2 className="text-lg lg:text-xl font-semibold mb-3">Categories</h2>
-            <p className="text-gray-600 text-sm lg:text-base mb-4">Manage car categories</p>
-            <a href="/admin/categories" className="inline-flex items-center text-blue-500 hover:text-blue-600 hover:underline text-sm lg:text-base">
+            <p className="text-muted-foreground text-sm lg:text-base mb-4">Manage car categories</p>
+            <a href="/admin/categories" className="inline-flex items-center text-primary hover:text-primary/80 hover:underline text-sm lg:text-base">
               Go to Categories
               <span className="ml-1">→</span>
             </a>
