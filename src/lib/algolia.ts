@@ -1,6 +1,5 @@
 import algoliasearch from 'algoliasearch'
-import { getDocs, collection } from 'firebase/firestore'
-import { db } from './firebase'
+import { adminDb } from './firebase-admin'
 
 // Check for Algolia environment variables but don't throw during build time
 const hasAlgoliaConfig = !!(process.env.NEXT_PUBLIC_ALGOLIA_APP_ID && process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_KEY)
@@ -87,9 +86,10 @@ export const reindexAllCars = async () => {
     console.log('Configuring index...')
     await configureAlgoliaIndex()
 
-    // Get all cars from Firestore
+    // Get all cars from Firestore using the Admin SDK
     console.log('Fetching cars from Firestore...')
-    const carsSnapshot = await getDocs(collection(db, 'cars'))
+    const carsCollection = adminDb.collection('cars');
+    const carsSnapshot = await carsCollection.get();
     console.log(`Found ${carsSnapshot.docs.length} cars in Firestore`)
     
     if (carsSnapshot.empty) {
