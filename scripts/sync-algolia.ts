@@ -6,7 +6,7 @@ const envPath = resolve(process.cwd(), '.env.local')
 console.log('Loading environment variables from:', envPath)
 config({ path: envPath })
 
-import { db } from './firebase-admin'
+import { adminDb } from '../src/lib/firebase-admin'
 import algoliasearch from 'algoliasearch'
 import { Car } from '../src/types/car'
 
@@ -93,7 +93,7 @@ async function syncCarsWithAlgolia() {
     
     // Get all cars from Firestore
     console.log('📚 Fetching cars from Firestore...')
-    const carsSnapshot = await db.collection('cars').get()
+    const carsSnapshot = await adminDb.collection('cars').get()
     
     if (carsSnapshot.empty) {
       console.log('ℹ️ No cars found in Firestore')
@@ -101,7 +101,7 @@ async function syncCarsWithAlgolia() {
     }
     
     // Format cars for Algolia
-    const algoliaObjects = carsSnapshot.docs.map(doc => 
+    const algoliaObjects = carsSnapshot.docs.map((doc: any) => 
       formatCarForAlgolia(doc.data() as Car, doc.id)
     )
     
